@@ -8,32 +8,40 @@
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="disain.css">
     <style>
-    /* Diivanite konteiner */
-    .sofa-item {
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        margin-bottom: 30px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-     /* Pildid */
-     .sofa-item .carousel-inner img {
-        width: 100%; /* Tagab, et pilt täidab täielikult oma konteineri */
-        height: auto; /* Kõrgus on automaatne, et pilt ei moondu */
-    }
+        .container {
+            display: flex;
+            flex-direction: column; /* Asetab elemendid üksteise alla */
+            align-items: center; /* Joondab keskele */
+            justify-content: space-between;
+        }
 
-    /* Piltide konteiner */
-    .col-md-6 {
-        flex: 1 1 45%; /* Pildid võtavad umbes pool ruumi */
-    }
+        .sofa-item {
+            width: 100%;
+            max-width: 500px; /* Et diivanid poleks liiga laiad */
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0; /* Eraldab diivanid üksteisest */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
 
-    /* Pealkirjad ja kirjeldused */
-    .sofa-item h2, .sofa-item h4 {
-        text-align: center;
-    }   
+        .sofa-item img {
+            width: 100%;
+            max-width: 400px; /* Pilt ei läheks liiga suureks */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        } 
+
+        .sofa-item .carousel-inner img {
+            width: 100%; 
+            max-width: 400px; /* Tagab, et ei lähe liiga suureks */
+            height: 300px; /* Fikseeritud kõrgus, aga pilt jääb terviklikuks */
+            object-fit: contain; /* Säilitab proportsiooni, jätab tühja ruumi vajadusel */
+            border-radius: 10px;
+            background-color: white; /* Lisab tausta, kui pilt ei täida kogu ala */
+        }
     </style>
 </head>
 <body>
@@ -68,90 +76,77 @@
     <!-- Peamine sisu -->
     <div class="container mt-5">
         <h1 class="text-center mb-4">Diivanid</h1>
-
+    
         <!-- 🔹 Diivan 1: Ariel -->
-        <div class="row sofa-item">
-            <div class="col-md-6">
-                <!-- Siin on karussell, mis kuvab erinevaid pilte -->
-                <div id="carouselAriel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/Diivan-Ariel-Wooley-22907-1-scaled-1500x1000.jpg" class="d-block w-100" alt="Diivan Ariel">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/Diivan-Ariel-Wooley-22907-2-scaled-1500x1000.jpg" class="d-block w-100" alt="Diivan Ariel">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/Diivan-Ariel-Wooley-22907-3-scaled-1500x1000.jpg" class="d-block w-100" alt="Diivan Ariel">
-                        </div>
+        <div class="sofa-item">
+            <div id="carouselAriel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/Diivan-Ariel-Wooley-22907-1-scaled-1500x1000.jpg" alt="Diivan Ariel">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselAriel" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselAriel" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="images/Diivan-Ariel-Wooley-22907-2-scaled-1500x1000.jpg" alt="Diivan Ariel">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Diivan-Ariel-Wooley-22907-3-scaled-1500x1000.jpg" alt="Diivan Ariel">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselAriel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselAriel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
-            <div class="col-md-6">
-                <h2>Diivan Ariel</h2>
-                <h4>1990,00 €</h4>
-                <p>Eristu ja julge mugavusega silma paista! Diivan Ariel üllatab oma efektse välimuse ja nauditava istumiskogemusega.</p>
-            </div>
+            <h2>Diivan Ariel</h2>
+            <h4>1990,00 €</h4>
+            <p>Eristu ja julge mugavusega silma paista! Diivan Ariel üllatab oma efektse välimuse ja nauditava istumiskogemusega.</p>
         </div>
-
+    
         <!-- 🔹 Diivan 2: Harles -->
-        <div class="row sofa-item">
-            <div class="col-md-6">
-                <div id="carouselHarles" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/S72-15CLCSR_Bergen900_front.webp" class="d-block w-100" alt="Diivan Harles">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/S72-15CLCSR_Bergen900_side.webp" class="d-block w-100" alt="Diivan Harles">
-                        </div>
+        <div class="sofa-item">
+            <div id="carouselHarles" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/S72-15CLCSR_Bergen900_front.webp" alt="Diivan Harles">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHarles" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHarles" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="images/S72-15CLCSR_Bergen900_side.webp" alt="Diivan Harles">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselHarles" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselHarles" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
-            <div class="col-md-6">
-                <h2>Diivan Harles</h2>
-                <h4>3107,00 €</h4>
-                <p>Kõrgetele jalgadele toetuv Harles on mugavuse täiuslik kehastus.</p>
-            </div>
+            <h2>Diivan Harles</h2>
+            <h4>3107,00 €</h4>
+            <p>Kõrgetele jalgadele toetuv Harles on mugavuse täiuslik kehastus.</p>
         </div>
-
+    
         <!-- 🔹 Diivan 3: Tampa -->
-        <div class="row sofa-item">
-            <div class="col-md-6">
-                <div id="carouselTampa" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/43063eb9dd734e684ad9b2a5e9399e9d69614b64_AC97784_03_6.jpg" class="d-block w-100" alt="Diivan Tampa">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/e4826bb4c9828936f33c934bf77841af41f9e90e_AC97784_08_6.jpg" class="d-block w-100" alt="Diivan Tampa">
-                        </div>
+        <div class="sofa-item">
+            <div id="carouselTampa" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/43063eb9dd734e684ad9b2a5e9399e9d69614b64_AC97784_03_6.jpg" alt="Diivan Tampa">
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTampa" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTampa" data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="images/e4826bb4c9828936f33c934bf77841af41f9e90e_AC97784_08_6.jpg" alt="Diivan Tampa">
+                    </div>
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTampa" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselTampa" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
-            <div class="col-md-6">
-                <h2>Diivan Tampa</h2>
-                <h4>1069,00 €</h4>
-                <p>Kaasaegne diivan, mis ühendab endas mugavuse ja elegantsi.</p>
-            </div>
+            <h2>Diivan Tampa</h2>
+            <h4>1069,00 €</h4>
+            <p>Kaasaegne diivan, mis ühendab endas mugavuse ja elegantsi.</p>
         </div>
     </div>
 

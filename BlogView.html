@@ -7,6 +7,51 @@
     <link rel="stylesheet" href="css\bootstrap.css">
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="disain.css">
+    <style>
+        .posts {
+            padding: 40px 0;
+            background-color: #f9f9f9;
+        }
+
+        .card--article {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .blog-image {
+            width: 90%; /* Muudab pildi natuke väiksemaks */
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card__article-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: black; /* Pealkirjad on mustad */
+            transition: color 0.3s ease-in-out;
+        }
+
+        .card__article-title:hover {
+            color: #800080; /* Kui kursor peale viia, muutub lillaks */
+        }
+
+        .card__article-link {
+            text-decoration: none;
+            color: inherit; /* Säilitab pealkirja värvi */
+            font-weight: bold;
+        }
+
+        .card__date {
+            font-size: 14px;
+            color: gray;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -42,7 +87,7 @@
                 <div class="grid__col grid_col--sm-6 grid__col--md 5 posts_column">
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <a href=""></a>
+                            <img src="images/BlogiPildid/diivanvoodi-boston-586-aston-16_3947527.webp" alt="">
                             <h4 class="card__article-title">
                                 <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis Mac Diivan</a>
                             </h4>
@@ -52,9 +97,9 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <a href=""></a>
+                            <img src="images/BlogiPildid/diivanvoodi-boston-597-wind-76_3862351.jpg" alt="">
                             <h4 class="card__article-title">
-                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis Mac Diivan</a>
+                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis idee teha diivani tooteid</a>
                             </h4>
                             <time class="card__date" datetime> 13.03.2025</time>
                         </div>
@@ -62,9 +107,9 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <a href=""></a>
+                            <img src="images/BlogiPildid/diivanvoodi-columbus-137-paros-2_3095694.webp" alt="">
                             <h4 class="card__article-title">
-                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis Mac Diivan</a>
+                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Diivanite ajalugu</a>
                             </h4>
                             <time class="card__date" datetime> 6.03.2025</time>
                         </div>
@@ -72,9 +117,9 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <a href=""></a>
+                            <img src="images/BlogiPildid/diivanvoodi-shelton-104-poso-100_3679557.webp" alt="">
                             <h4 class="card__article-title">
-                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis Mac Diivan</a>
+                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Meie uus disain tulekul...</a>
                             </h4>
                             <time class="card__date" datetime> Coming soon (27.03.2025) </time>
                         </div>
