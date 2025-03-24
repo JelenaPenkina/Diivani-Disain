@@ -6,46 +6,160 @@
     <title>Log in</title>
     <link rel="stylesheet" href="css\bootstrap.css">
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="disain.css">
+    <style>
+        /* Peidame vormi, mis ei ole valitud */
+        .login-form, .register-form {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+         /* Nuputüüpide stiil */
+         .ty-tablinks {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* aktiivse nupu värv (lilla) */
+        .ty-tablinks.active {
+            background-color: #800080;
+            color: white;
+        }
+
+        /* Lilla nupud vormis */
+        .btn-primary {
+            background-color: #800080;
+            border-color: #800080;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #660066;
+            border-color: #660066;
+        }
+
+        /* Inputi stiil */
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div>
-        <div class="row justify-content-center my-5">
-            <div class="col-lg-6">
-                <form action="">
-                    <label for="first name" class="form-label">First Name:</label>
-                    <input type="First Name" id="FirstName" placeholder="First Name">
-                </form>
+    <div class="header">
+        <div class="container">
+            <!-- Logo vasakul -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/soft-logo-png-transparent.png" alt="Diivanid logo">
+                </a>
+            </div>
+
+            <!-- Navigatsioonimenüü keskel -->
+            <div class="nav">
+                <a href="SofaProducts.html">Sofa Products</a>
+                <a href="BlogView.html">Blog View</a> 
+                <a href="Contact.html">Contact</a>
+                <a href="LogIn.html">Log in</a>
+            </div>
+
+            <!-- Ostukorvi ikoon paremal -->
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="images/360_F_631788778_jbL4ZKDb5q1pQVst2lpEg7XFGKLpupBE.jpg" alt="Ostukorv">
+                </a>
             </div>
         </div>
-
-        <div class="ty-login">
-            <div class="ty-login-tabs">
-                <span class="ty-tablinks active" id="login">Logi sisse</span>
-                <span class="ty-tablinks" id="register">Registreeri</span>
-                <div id="indicator"></div>
-            </div>
-            <div class="ty-account-login">
-                <form class="tabcontent cm-processed-form" name="main_login_form"  action=""></form>
-            </div>
-        </div>
-
-
-        <div class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Registreerimine õnnestus! Aitäh!</h5>
-                        <button type="button" class="btn-close"></button>
-                    </div>
-                    <div class="modal-body">ARe you sure?</div>
-                    <div modal-footer>
-                        <button type="button" class="btn btn-primary">Save</button>
-                    </div>
-                </div>
-            </div>
-        </div> 
     </div>
 
-    <a href="index.html"> Back in Main page</a>
+
+    <div class="container mt-5">
+        <!-- Logi sisse ja registreeri tabs -->
+        <div class="ty-login-tabs text-center">
+            <span class="ty-tablinks active" id="login" onclick="showLogin()">Logi sisse</span>
+            <span class="ty-tablinks" id="register" onclick="showRegister()">Registreeri</span>
+            <div id="indicator"></div>
+        </div>
+
+        <!-- Logi sisse vorm -->
+        <div class="login-form active" id="loginForm">
+            <h2>Logi sisse</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" id="email" class="form-control" placeholder="E-mail">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Parool</label>
+                    <input type="password" id="password" class="form-control" placeholder="Parool">
+                </div>
+                <button type="submit" class="btn btn-primary">Logi sisse</button>
+            </form>
+        </div>
+
+        <!-- Registreeri vorm -->
+        <div class="register-form" id="registerForm">
+            <h2>Registreeri</h2>
+            <form>
+                <div class="mb-3">
+                    <label for="firstName" class="form-label">Eesnimi</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="Eesnimi">
+                </div>
+                <div class="mb-3">
+                    <label for="lastName" class="form-label">Perenimi</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Perenimi">
+                </div>
+                <div class="mb-3">
+                    <label for="emailRegister" class="form-label">E-mail</label>
+                    <input type="email" id="emailRegister" class="form-control" placeholder="E-mail">
+                </div>
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Telefon</label>
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Telefon" pattern="[0-9]{8}" title="Sisesta kehtiv telefoninumber">
+                </div>
+                <div class="mb-3">
+                    <label for="passwordRegister" class="form-label">Parool</label>
+                    <input type="password" id="passwordRegister" class="form-control" placeholder="Parool">
+                </div>
+                <button type="submit" class="btn btn-primary">Registreeri</button>
+            </form>
+        </div>
+
+        <div class="footer mt-5">
+            <div class="container text-center">
+                <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
+                <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funktsioon, et muuta vaadet "Logi sisse" ja "Registreeri" vahel
+        function showLogin() {
+            document.getElementById('loginForm').classList.add('active');
+            document.getElementById('registerForm').classList.remove('active');
+            document.getElementById('login').classList.add('active');
+            document.getElementById('register').classList.remove('active');
+        }
+
+        function showRegister() {
+            document.getElementById('loginForm').classList.remove('active');
+            document.getElementById('registerForm').classList.add('active');
+            document.getElementById('login').classList.remove('active');
+            document.getElementById('register').classList.add('active');
+        }
+    </script>
+
+
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
+            <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
+        </div>
+    </div>
+
 </body>
 </html>

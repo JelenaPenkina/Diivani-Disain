@@ -6,22 +6,105 @@
     <title>Contact</title>
     <link rel="stylesheet" href="css\bootstrap.css">
     <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="disain.css">
+    <style>
+        .contact-section {
+            padding: 30px 0;
+        }
+
+        .contact-section .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Logo vasakule, kontaktid paremale */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-section .logo img {
+            height: 80px; /* Sobiv suurus */
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-info li {
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .contact-info a {
+            color: #FFD700; /* Kuldne link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="main-story container_12">
-            <div class="text">
+
+    <div class="header">
+        <div class="container">
+            <!-- Logo vasakul -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/soft-logo-png-transparent.png" alt="Diivanid logo">
+                </a>
+            </div>
+
+            <!-- Navigatsioonimenüü keskel -->
+            <div class="nav">
+                <a href="SofaProducts.html">Sofa Products</a>
+                <a href="BlogView.html">Blog View</a> 
+                <a href="Contact.html">Contact</a>
+                <a href="LogIn.html">Log in</a>
+            </div>
+
+            <!-- Ostukorvi ikoon paremal -->
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="images/360_F_631788778_jbL4ZKDb5q1pQVst2lpEg7XFGKLpupBE.jpg" alt="Ostukorv">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Kontaktide sektsioon -->
+    <div class="contact-section">
+        <div class="container">
+            <!-- Logo vasakul -->
+            <div class="logo">
+                <img src="images/soft-logo-png-transparent.png" alt="Diivanid logo">
+            </div>
+
+            <!-- Kontaktinfo paremal -->
+            <div class="contact-info">
                 <ul>
-                    <li>ETRI Groupp OÜ</li>
-                    <li>Information phone:  +372 (63) 46288 </li>
-                    <li>Information e-mail: info@moobel1.ee</li>    
-                    <li>E-R 9.00-17.00</li>
-                    <li>Tallinn City Office registry code: 75014920</li>
-                    <li><a href="https://www.moobel1.ee/auth-loginform/">More information</a></li>
+                    <li><strong>ETRI Groupp OÜ</strong></li>
+                    <li>📞 +372 (63) 46288</li>
+                    <li>✉️ <a href="mailto:info@moobel1.ee">info@moobel1.ee</a></li>
+                    <li>🕒 E-R 9.00-17.00</li>
+                    <li>🏢 Tallinn City Office, registry code: 75014920</li>
+                    <li><a href="https://www.moobel1.ee/auth-loginform/">Rohkem infot</a></li>
                 </ul>
             </div>
-        </div>         
+        </div>
     </div>
-    <a href="index.html"> Back </a>
+
+    <div class="footer">
+        <div class="container">
+            <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
+            <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
+        </div>
+    </div>
+
 </body>
 </html>
