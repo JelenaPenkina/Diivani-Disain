@@ -46,7 +46,73 @@
         input {
             margin-bottom: 10px;
         }
-    </style>
+        /* Tagab, et footer jääb lehe alla */
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            flex: 1;
+        }
+
+        /* Logi sisse ja registreeri tabid kõrvuti */
+        .ty-login-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Vormide nähtavus */
+        .login-form form, .register-form form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login-form form .mb-3, .register-form form .mb-3 {
+            width: 100%; 
+            max-width: 300px; 
+        }
+
+        .login-form.active, .register-form.active {
+            display: block;
+            
+        }
+
+        /* Modal popup */
+        .modal {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .modal.show {
+            display: block;
+        }
+
+        /* Lilla nupud */
+        .ty-tablinks.active, .btn-primary {
+            background-color: #800080;
+            color: white;
+            font-weight: bold;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #660066;
+        }
+        </style>
 </head>
 <body>
     <div class="header">
@@ -111,15 +177,16 @@
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Perenimi</label>
                     <input type="text" id="lastName" class="form-control" placeholder="Perenimi">
+                </div> 
+                <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Telefon</label>
+                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Telefon" pattern="[0-9]{8}" title="Sisesta kehtiv telefoninumber">
                 </div>
                 <div class="mb-3">
                     <label for="emailRegister" class="form-label">E-mail</label>
                     <input type="email" id="emailRegister" class="form-control" placeholder="E-mail">
                 </div>
-                <div class="mb-3">
-                    <label for="phoneNumber" class="form-label">Telefon</label>
-                    <input type="tel" id="phoneNumber" class="form-control" placeholder="Telefon" pattern="[0-9]{8}" title="Sisesta kehtiv telefoninumber">
-                </div>
+               
                 <div class="mb-3">
                     <label for="passwordRegister" class="form-label">Parool</label>
                     <input type="password" id="passwordRegister" class="form-control" placeholder="Parool">
@@ -128,16 +195,7 @@
             </form>
         </div>
 
-        <div class="footer mt-5">
-            <div class="container text-center">
-                <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
-                <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
-            </div>
-        </div>
-    </div>
-
     <script>
-        // Funktsioon, et muuta vaadet "Logi sisse" ja "Registreeri" vahel
         function showLogin() {
             document.getElementById('loginForm').classList.add('active');
             document.getElementById('registerForm').classList.remove('active');
@@ -151,15 +209,43 @@
             document.getElementById('login').classList.remove('active');
             document.getElementById('register').classList.add('active');
         }
+
+        // Näita teavitust (modal)
+        function showModal(message) {
+            document.getElementById('modal-text').innerText = message;
+            document.getElementById('modal').classList.add('show');
+        }
+
+        // Sulge teavitus
+        function closeModal() {
+            document.getElementById('modal').classList.remove('show');
+        }
+
+        // Lisame sündmused, et kuvada modal pärast registreerimist/sisselogimist
+        document.querySelector('.login-form form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showModal('Oled edukalt sisse loginud!');
+        });
+
+        document.querySelector('.register-form form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            showModal('Oled edukalt registreeritud!');
+        });
     </script>
 
-
-    <div class="footer">
-        <div class="container">
-            <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
-            <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
-        </div>
+        <!-- Modal (teavituse popup) -->
+    <div id="modal" class="modal">
+        <p id="modal-text"></p>
+        <button onclick="closeModal()">OK</button>
     </div>
+
+
+    <div class="main-content">
+        <!-- Siia läheb kogu ülejäänud sisu -->
+    </div>
+    <footer class="footer">
+        <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
+    </footer>
 
 </body>
 </html>

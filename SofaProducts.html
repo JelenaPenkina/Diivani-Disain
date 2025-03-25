@@ -8,6 +8,62 @@
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="disain.css">
     <style>
+        /* Üldine stiil */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+
+        /* Päis */
+        .header {
+            background-color: #ffffff;
+            padding: 15px 0;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        /* Peamine konteiner, kus on logo, nav ja cart */
+        .header .container {
+            width: 90%; /* Teeb konteineri laius väiksemaks */
+            max-width: 1200px; /* Piirab maksimaalset laiust */
+            display: flex;
+            justify-content: space-between; /* Logo vasakul, nav keskel, cart paremal */
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        /* Logo */
+        .logo img {
+            height: 50px; /* Logo kõrgus */
+        }
+
+        /* Navigatsioonimenüü */
+        .nav {
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+
+        .nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            transition: 0.5s;
+        }
+
+        .nav a:hover {
+            color: #8a2be2;
+        }
+
+        /* Ostukorvi ikoon */
+        .cart img {
+            height: 40px; 
+        }
+
+        /* Sisuosa */
         .container {
             display: flex;
             flex-direction: column; /* Asetab elemendid üksteise alla */
@@ -15,6 +71,7 @@
             justify-content: space-between;
         }
 
+        /* Diivanite kujundus */
         .sofa-item {
             width: 100%;
             max-width: 500px; /* Et diivanid poleks liiga laiad */
@@ -32,7 +89,7 @@
             height: auto;
             border-radius: 10px;
             margin-bottom: 15px;
-        } 
+        }
 
         .sofa-item .carousel-inner img {
             width: 100%; 
@@ -42,41 +99,57 @@
             border-radius: 10px;
             background-color: white; /* Lisab tausta, kui pilt ei täida kogu ala */
         }
+
+        /* Jalus */
+        .footer {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: auto;
+        }
     </style>
 </head>
 <body>
 
-        <!-- Päis koos logoga ja ostukorviga -->
-        <div class="header">
-            <div class="container">
-                <!-- Logo vasakul -->
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/soft-logo-png-transparent.png" alt="Diivanid logo">
-                    </a>
-                </div>
-    
-                <!-- Navigatsioonimenüü keskel -->
-                <div class="nav">
-                    <a href="SofaProducts.html">Sofa Products</a>
-                    <a href="BlogView.html">Blog View</a> 
-                    <a href="Contact.html">Contact</a>
-                    <a href="LogIn.html">Log in</a>
-                </div>
-    
-                <!-- Ostukorvi ikoon paremal -->
-                <div class="cart">
-                    <a href="cart.html">
-                        <img src="images/360_F_631788778_jbL4ZKDb5q1pQVst2lpEg7XFGKLpupBE.jpg" alt="Ostukorv">
-                    </a>
-                </div>
+    <!-- Päis koos logoga ja ostukorviga -->
+    <div class="header">
+        <div class="container">
+            <!-- Logo vasakul -->
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/soft-logo-png-transparent.png" alt="Diivanid logo">
+                </a>
+            </div>
+
+            <!-- Navigatsioonimenüü keskel -->
+            <div class="nav">
+                <a href="SofaProducts.html">Sofa Products</a>
+                <a href="BlogView.html">Blog View</a>
+                <a href="Contact.html">Contact</a>
+                <a href="LogIn.html">Log in</a>
+            </div>
+
+            <!-- Ostukorvi ikoon paremal -->
+            <div class="cart">
+                <a href="cart.html">
+                    <img src="images/360_F_631788778_jbL4ZKDb5q1pQVst2lpEg7XFGKLpupBE.jpg" alt="Ostukorv">
+                </a>
             </div>
         </div>
+    </div>
 
     <!-- Peamine sisu -->
     <div class="container mt-5">
         <h1 class="text-center mb-4">Diivanid</h1>
-    
+
         <!-- 🔹 Diivan 1: Ariel -->
         <div class="sofa-item">
             <div id="carouselAriel" class="carousel slide" data-bs-ride="carousel">
@@ -102,7 +175,7 @@
             <h4>1990,00 €</h4>
             <p>Eristu ja julge mugavusega silma paista! Diivan Ariel üllatab oma efektse välimuse ja nauditava istumiskogemusega.</p>
         </div>
-    
+
         <!-- 🔹 Diivan 2: Harles -->
         <div class="sofa-item">
             <div id="carouselHarles" class="carousel slide" data-bs-ride="carousel">
@@ -125,7 +198,7 @@
             <h4>3107,00 €</h4>
             <p>Kõrgetele jalgadele toetuv Harles on mugavuse täiuslik kehastus.</p>
         </div>
-    
+
         <!-- 🔹 Diivan 3: Tampa -->
         <div class="sofa-item">
             <div id="carouselTampa" class="carousel slide" data-bs-ride="carousel">
@@ -154,7 +227,6 @@
     <div class="footer mt-5">
         <div class="container text-center">
             <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
-            <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
         </div>
     </div>
 

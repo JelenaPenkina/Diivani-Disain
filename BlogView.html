@@ -8,11 +8,27 @@
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="disain.css">
     <style>
-        .posts {
-            padding: 40px 0;
-            background-color: #f9f9f9;
+        /* Paigutus, et kaardid oleksid üksteise all ja keskel */
+        .posts__grid {
+            display: flex;
+            flex-direction: column; /* Kaardid paigutatakse üksteise alla */
+            align-items: center; /* Paigutab kaardid horisontaalselt keskele */
+            justify-content: flex-start; /* Paigutab kaardid algusesse (kui neid on palju, siis ei lähe nad alla) */
+            gap: 20px; /* Ruumi kaartide vahel */
+            width: 100%; /* Täidab kogu laiuse */
+            max-width: 1200px; /* Võid määrata maksimaalse laius, et vältida liiga laiu kaarte */
+            margin: 0 auto; /* Paigutab konteineri ekraani keskele */
         }
 
+        /* Kui on eraldi veerg, siis sama - paigutus on vertikaalne */
+        .posts_column {
+            display: flex;
+            flex-direction: column; /* Paigutab kaardid üksteise alla */
+            align-items: center; /* Paigutab kaardid horisontaalselt keskele */
+            gap: 20px; /* Ruumi kaartide vahel */
+        }
+
+        /* Kaardi stiil, et kaardid oleksid ühtlaselt jaotatud */
         .card--article {
             background: white;
             padding: 20px;
@@ -20,38 +36,57 @@
             margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 300px; /* Kõik kaardid on sama kõrgusega */
+            max-width: 400px; /* Et kaardid poleks liiga laiad */
+            width: 100%; /* Täidab kogu saadaval oleva ruumi */
         }
 
-        .blog-image {
-            width: 90%; /* Muudab pildi natuke väiksemaks */
-            height: auto;
+        /* Kaardi sisekonteiner */
+        .card__article-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            text-align: center;
+            height: 100%;
+        }
+
+        /* Pilt, et kõik pildid oleksid ühesugused ja ühtlaselt paigutatud */
+        .blog-imag {
+            width: 100%; /* Pilt täidab kogu laiuse */
+            height: 200px; /* Fikseeritud kõrgus, et kõik pildid oleksid sama suured */
+            object-fit: cover; /* Lõikab pildi nii, et tähtsad osad jäävad nähtavale */
             border-radius: 10px;
             margin-bottom: 15px;
         }
 
+        /* Kaardi pealkiri */
         .card__article-title {
             font-size: 22px;
             margin-bottom: 10px;
-            color: black; /* Pealkirjad on mustad */
+            color: black; /* Pealkirjad mustad */
             transition: color 0.3s ease-in-out;
         }
 
-        .card__article-title:hover {
-            color: #800080; /* Kui kursor peale viia, muutub lillaks */
+        /* Kaardi pealkirja lingi stiil */
+        .card__article-title a {
+            text-decoration: none; /* Eemaldab allajoonimise */
+            color: black; /* Pealkirjad on mustad */
         }
 
-        .card__article-link {
-            text-decoration: none;
-            color: inherit; /* Säilitab pealkirja värvi */
-            font-weight: bold;
+        .card__article-title a:hover {
+            color: #800080; /* Hoveril lillaks */
         }
 
+        /* Kuupäev paigutatakse alla */
         .card__date {
             font-size: 14px;
             color: gray;
+            margin-top: auto; /* Lükkab kuupäeva alla */
         }
-
-    </style>
+   </style>
 </head>
 <body>
 
@@ -81,13 +116,15 @@
         </div>
     </div>
 
+    <br>
+
     <div class="posts">
         <div class="h-container">
             <div class="grid grid--center-xs grid--quintuple-gutter posts__grid">
                 <div class="grid__col grid_col--sm-6 grid__col--md 5 posts_column">
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <img src="images/BlogiPildid/diivanvoodi-boston-586-aston-16_3947527.webp" alt=""> <br>
+                            <img class="blog-imag" src="images/BlogiPildid/diivanvoodi-boston-586-aston-16_3947527.webp" alt="">
                             <h4 class="card__article-title">
                                 <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis Mac Diivan</a>
                             </h4>
@@ -97,9 +134,9 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <img src="images/BlogiPildid/diivanvoodi-boston-597-wind-76_3862351.jpg" alt=""> <br>
+                            <img class="blog-imag" src="images/BlogiPildid/diivanvoodi-boston-597-wind-76_3862351.jpg" alt="">
                             <h4 class="card__article-title">
-                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis idee teha diivani tooteid</a>
+                                <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Kuidas sündis idee teha diivaneid?</a>
                             </h4>
                             <time class="card__date" datetime> 13.03.2025</time>
                         </div>
@@ -107,7 +144,7 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <img src="images/BlogiPildid/diivanvoodi-columbus-137-paros-2_3095694.webp" alt=""> <br>
+                            <img class="blog-imag" src="images/BlogiPildid/diivanvoodi-columbus-137-paros-2_3095694.webp" alt=""> 
                             <h4 class="card__article-title"> 
                                 <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Diivanite ajalugu</a>
                             </h4>
@@ -117,8 +154,8 @@
 
                     <div class="card card--article">
                         <div class="card__article-container"> 
-                            <img src="images/BlogiPildid/diivanvoodi-shelton-104-poso-100_3679557.webp" alt=""> <br>
-                            <h4 class="card__article-title"> <br>
+                            <img class="blog-imag" src="images/BlogiPildid/diivanvoodi-shelton-104-poso-100_3679557.webp" alt=""> 
+                            <h4 class="card__article-title"> 
                                 <a href="https://softrend.ee/diivan-mac-kuidas-ta-sundis/" class="card__article-link">Meie uus disain tulekul...</a>
                             </h4>
                             <time class="card__date" datetime> Coming soon (27.03.2025) </time>
@@ -132,7 +169,6 @@
     <div class="footer">
         <div class="container">
             <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
-            <a href="index.html" class="btn btn-secondary">Tagasi avalehele</a>
         </div>
     </div>
 </body>
