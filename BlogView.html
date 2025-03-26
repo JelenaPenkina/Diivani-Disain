@@ -16,19 +16,17 @@
             justify-content: flex-start; /* Paigutab kaardid algusesse (kui neid on palju, siis ei lähe nad alla) */
             gap: 20px; /* Ruumi kaartide vahel */
             width: 100%; /* Täidab kogu laiuse */
-            max-width: 1200px; /* Võid määrata maksimaalse laius, et vältida liiga laiu kaarte */
+            max-width: 1200px; /* määrab maksimaalse laius, et vältida liiga laiu kaarte */
             margin: 0 auto; /* Paigutab konteineri ekraani keskele */
         }
 
-        /* Kui on eraldi veerg, siis sama - paigutus on vertikaalne */
         .posts_column {
             display: flex;
-            flex-direction: column; /* Paigutab kaardid üksteise alla */
-            align-items: center; /* Paigutab kaardid horisontaalselt keskele */
-            gap: 20px; /* Ruumi kaartide vahel */
+            flex-direction: column; 
+            align-items: center; 
+            gap: 20px; 
         }
 
-        /* Kaardi stiil, et kaardid oleksid ühtlaselt jaotatud */
         .card--article {
             background: white;
             padding: 20px;
@@ -44,7 +42,6 @@
             width: 100%; /* Täidab kogu saadaval oleva ruumi */
         }
 
-        /* Kaardi sisekonteiner */
         .card__article-container {
             display: flex;
             flex-direction: column;
@@ -53,16 +50,14 @@
             height: 100%;
         }
 
-        /* Pilt, et kõik pildid oleksid ühesugused ja ühtlaselt paigutatud */
         .blog-imag {
             width: 100%; /* Pilt täidab kogu laiuse */
-            height: 200px; /* Fikseeritud kõrgus, et kõik pildid oleksid sama suured */
+            height: 200px; 
             object-fit: cover; /* Lõikab pildi nii, et tähtsad osad jäävad nähtavale */
             border-radius: 10px;
             margin-bottom: 15px;
         }
 
-        /* Kaardi pealkiri */
         .card__article-title {
             font-size: 22px;
             margin-bottom: 10px;
@@ -70,17 +65,15 @@
             transition: color 0.3s ease-in-out;
         }
 
-        /* Kaardi pealkirja lingi stiil */
         .card__article-title a {
             text-decoration: none; /* Eemaldab allajoonimise */
-            color: black; /* Pealkirjad on mustad */
+            color: black; 
         }
 
         .card__article-title a:hover {
             color: #800080; /* Hoveril lillaks */
         }
 
-        /* Kuupäev paigutatakse alla */
         .card__date {
             font-size: 14px;
             color: gray;
@@ -166,8 +159,8 @@
         </div>
     </div>
 
-    <div class="footer">
-        <div class="container">
+    <div class="footer mt-5">
+        <div class="container text-center">
             <p>© 2025 Diivanid OÜ. Kõik õigused kaitstud.</p>
         </div>
     </div>
